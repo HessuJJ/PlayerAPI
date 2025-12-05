@@ -1,13 +1,14 @@
 from sqlmodel import SQLModel, Field, Relationship
 
 class PlayerBase(SQLModel):
-    name:str
+    id:int = Field(default=None, primary_key = True)
+    
 
 class PlayerIn(PlayerBase):
     pass
     
 class PlayerDb(PlayerBase, table = True):
-    id:int = Field(default=None, primary_key = True)
+    name:str
     events: list["EventDb"] = Relationship(back_populates="events")
     
 class PlayerSingle(SQLModel):
