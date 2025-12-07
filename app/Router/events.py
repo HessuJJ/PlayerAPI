@@ -4,6 +4,7 @@ from ..database.models import EventDb
 from ..database import events_crud as crud
 from ..database.database import get_session
 
+# Router that defines to endpoints URL-root "/events" and groups them to tag "events"
 router = APIRouter(prefix="/events", tags=["events"])
 
 @router.get("", response_model=list[EventDb])
