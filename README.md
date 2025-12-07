@@ -1,7 +1,7 @@
-#PlayerAPI
+# PlayerAPI
 This is a PlayerAPI created for the backend course final test.
 
-##Features
+## Features
 
 - view all players
 - create new player
@@ -10,7 +10,7 @@ This is a PlayerAPI created for the backend course final test.
 - create events for certain player
 - view all events.
 
-##Setup
+## Setup
 To run this, I recommend using a virtual environment with venv. The following steps provide guidance on how to use the app with venv.
 
 ### 1. Download or Clone project
