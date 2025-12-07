@@ -8,7 +8,7 @@ class PlayerBase(SQLModel):
 class PlayerIn(PlayerBase):
     pass
 
-#class that has relationship to EventDb player
+#class that has relationship to EventDb player and id is primary key 
 class PlayerDb(PlayerBase, table = True):
     id:int = Field(default=None, primary_key = True)
     events: list["EventDb"] = Relationship(back_populates="player")
@@ -23,7 +23,7 @@ class EventBase(SQLModel):
 class EventIn(EventBase):
     pass
 
-#class that has relationship to PlayerDb events
+#class that has relationship to PlayerDb events and id is primary key
 class EventDb(EventBase, table = True):
     id:int = Field(default=None, primary_key= True)
     timestamp: datetime = Field(default_factory=datetime.utcnow)
