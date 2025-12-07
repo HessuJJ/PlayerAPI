@@ -1,6 +1,6 @@
 from fastapi import Response,HTTPException, status
 from .models import PlayerIn,PlayerDb, EventIn, EventDb
-from sqlmodel import Session, select,case
+from sqlmodel import Session, select
 
 # Allowed types for event class type:str
 ALLOWED_TYPES= ["level_started", "level_solved"]

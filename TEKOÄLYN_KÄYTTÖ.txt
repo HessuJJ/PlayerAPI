@@ -1,0 +1,37 @@
+Ohjelman toteutukseen on käytetty tekoälyä.
+
+Tekoälyä käytetty enimmäkseen FastApin antamien virheiden selvitykseen,
+kuten alussa FastAPI:n käynnistyksessä syntyneeseen virheeseen "name EventIn"
+ei ole määritelty. Annoin virheen ChatGPT:lle, ohjasi minut löytämään, että
+events.py tiedostossa kutsun EventIn, mutta sitä ei oltu määritelty
+"from ..database.models import EventDb" komennossa, joten korjasin tämän 
+muotoon "from ..database.models import EventDb, EventIn" ja ongelma poistui.
+Tässä ongelmassa tajusin jo itsekin, että virhe johtuu tästä, kun tekoäly
+ohjasi minut löytämään virheen, joten en ratkaisun oikeellisuutta lähtenyt
+tämän enempää selvittelemään ja ongelman poistuessa olin varma tämän
+oikeellisuudesta.
+
+Toinen vastaava ongelma minkä annoin teköälylle oli, että ei ole moduulia
+nimettynä database. Tästä tekoäly ohjasi minut tarkistamaan main.py
+tiedostosta "database.database import create_db", jossa virheenä oli,
+että ".app" puuttui import:in edestä. Jälleen ymmärsin taas virheen
+ja FastAPI virheilmoituskin selvisi minulle ja muutin import:in muotoon
+".database.database import create_db". Myöskään tätä ratkaisua en lähtenyt
+selvittämään, koska tajusin itsekin mistä virhe johtuu ja muistin sen 
+harjoitustehtävistäkin ja olin varma sen oikeellisuudesta.
+
+Kolmas ongelma missä käytin tekoälyä oli
+"player_exists = session.exec(select(PlayerDb.id).where(PlayerDb.id==player_id)).first()"
+queryn toteuttaminen, koska en millään itse keksinyt ja ymmärtänyt kuinka
+voin toteuttaa, queryn jolla saan arvon mikä kertoo löytyikö tiettyä id:tä.
+Kun sain tekoälyltä ehdotuksen omaan yritykseeni pyysin linkkiä kyseisen
+ratkaisun virallisiin dokumentaatioihin. Dokumentatioista tarkistin ratkaisun
+oikeellisuuden ja tämä varmisti ratkaisun olevan oikein.
+
+Käytin tekoälyä niissä tilanteissa, kun olin jumissa projektin kanssa ja
+en löytänyt omilla hakusanoilla ratkaisua tai en ymmärtänyt löytynyttä
+dokumentaatiota. Käytin siis tekoälyä siksi, että saisin projektia eteenpäin,
+kun olin jumissa ja kun en itse löytänyt hakemalla ratkaisua tai 
+ymmärtänyt virheitä.
+
+

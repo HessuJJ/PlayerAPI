@@ -1,7 +1,7 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from .router import players, events
-from app.database.database import create_db 
+from .database.database import create_db 
 
 #lifespan function is run when the application starts
 @asynccontextmanager

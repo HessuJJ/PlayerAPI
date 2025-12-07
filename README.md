@@ -23,7 +23,7 @@ Open your preferred command prompt, example **PowerShell** (Windows) or **Termin
 
 ```bash
 cd  path\to\your\desired\folder
-git clone git@github.com:HessuJJ/PlayerAPI.git
+git clone https://github.com/HessuJJ/PlayerAPI.git
 cd playerAPI
 ```
 ### 2. Download venv
@@ -34,18 +34,23 @@ python -m venv venv
 ## 3. Activate virtual enviroment venv
 
 **Windows Command Prompt**
-```bash
+```cmd
 venv\Scripts\activate
 ```
 
 **Windows PowerShell**
-```bash
+```powershell
 .\venv\Scripts\Activate.ps1
 ```
 
 **macOS/Linux**
-```bash
+```terminal
 source venv/bin/activate
+```
+
+**Git bash**
+```bash
+venv/Scripts/activate
 ```
 
 ## 4. Install dependencies

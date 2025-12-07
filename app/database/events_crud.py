@@ -1,5 +1,5 @@
-from fastapi import Response,HTTPException, status
-from .models import EventIn, EventDb
+from fastapi import HTTPException, status
+from .models import EventDb
 from sqlmodel import Session, select
 
 # Allowed types for event class type:str
