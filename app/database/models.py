@@ -1,15 +1,16 @@
 from sqlmodel import SQLModel, Field, Relationship
+from datetime import datetime
+
 
 class PlayerBase(SQLModel):
-    id:int = Field(default=None, primary_key = True)
-    
+    name:str
 
 class PlayerIn(PlayerBase):
     pass
     
 class PlayerDb(PlayerBase, table = True):
-    name:str
-    events: list["EventDb"] = Relationship(back_populates="events")
+    id:int = Field(default=None, primary_key = True)
+    events: list["EventDb"] = Relationship(back_populates="player")
     
 class PlayerSingle(SQLModel):
     id:int
@@ -23,6 +24,7 @@ class EventIn(EventBase):
 
 class EventDb(EventBase, table = True):
     id:int = Field(default=None, primary_key= True)
-    timestamp:str
-    player_id: int | None = Field(default=None, foreign_key="playerdb.id")
+    timestamp: datetime = Field(default_factory=datetime.utcnow)
+    player_id: int = Field(default=None, foreign_key="playerdb.id")
+    player: PlayerDb = Relationship(back_populates="events")
     
