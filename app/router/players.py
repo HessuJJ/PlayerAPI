@@ -19,13 +19,13 @@ def create_new_player(*, session:Session = Depends(get_session), player_in:Playe
 
 #Router get that calls crud function that gets player from database.
 @router.get("/{id}", response_model=PlayerDb)
-def get_players_by_id(*, session:Session = Depends(get_session), player_id:int):
-    return crud.get_players_by_id(session, player_id)
+def get_players_by_id(*, session:Session = Depends(get_session), id:int):
+    return crud.get_players_by_id(session, id)
 
 #Router get that calls crud function that gets all events by player id.
 @router.get("/{id}/events", response_model=list[EventDb])
-def get_players_events_by_player_id(*,session:Session = Depends(get_session), player_id:int, event_type:str = None):
-    return crud.get_events_by_player_id(session,player_id, event_type)
+def get_players_events_by_player_id(*,session:Session = Depends(get_session), id:int, event_type:str = None):
+    return crud.get_events_by_player_id(session,id, event_type)
 
 #router post that calls crud function that creates new event for certain player id.
 @router.post("/{id}/events", status_code=status.HTTP_201_CREATED, response_model=EventDb)
